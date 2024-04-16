@@ -58,7 +58,7 @@ function handleClickRegisterBtn() {
                 success: function(data) {
                     alert("Create a new account succeeds!");
                     window.location.href = "/login";
-                    // console.log(data);
+                    console.log(data);
                 },
                 error: function(err) {
                     // console.log(err);
