@@ -34,5 +34,39 @@ DangKySuKien.registerUserForEvent = function(MaSuKien, MaNguoiDung, TenNguoiDung
         });
     });
 };
+DangKySuKien.findAll = function(result) {
+    dbConn.query("SELECT * FROM dangky_sukien", function(err, res) {
+        if (err) {
+            console.log("Error:", err);
+            result(err, null);
+        } else {
+            result(null, res);
+        }
+    });
+};
+
+DangKySuKien.getOne = function(MaDangKy, result) {
+    dbConn.query("SELECT * FROM dangky_sukien WHERE MaDangKy = ?", [MaDangKy], function(err, res) {
+        if (err) {
+            console.log("Error:", err);
+            result(err, null);
+        } else {
+            result(null, res);
+        }
+    });
+};
+
+
+DangKySuKien.delete = function(MaDangKy, result) {
+    dbConn.query("DELETE FROM dangky_sukien WHERE MaDangKy = ?", [MaDangKy], function(err, res) {
+        if (err) {
+            console.log("Error:", err);
+            result(err, null);
+        } else {
+            result(null, res);
+        }
+    });
+};
+
 
 module.exports = DangKySuKien;
