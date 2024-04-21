@@ -17,6 +17,7 @@ const taiLieuRoutes = require('./src/routers/tailieu.routers');
 const hoiThaoRoutes = require('./src/routers/hoithao.routers');
 const nguoidungRoutes = require('./src/routers/nguoidung.routers');
 const nhanvienRoutes = require('./src/routers/nhanvien.routers');
+const dangky_sukienRoutes = require('./src/routers/dangkysukien.routers');
 
 const { google } = require('googleapis');
 const dayjs = require('dayjs');
@@ -101,6 +102,7 @@ app.use('/api/tailieu', taiLieuRoutes);
 app.use('/api/hoithao', hoiThaoRoutes);
 app.use('/api/nguoidung',nguoidungRoutes);
 app.use('/api/nhanvien',nhanvienRoutes);
+app.use('/api/dangkysukien', dangky_sukienRoutes);
 
 // Define Google OAuth routes
 app.get('/google', (req, res) => {
